@@ -83,6 +83,10 @@ case "$FIRMWARE" in
 	xd3200)
 		ath10kcal_extract "art" 20480 2116
 		;;
+	ap147-010)
+		ath10kcal_extract "art" 20480 2116
+		#ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) + 1) if you want to adjust the MAC address for 5GHZ band
+		;;
 	dap-2695-a1)
 		ath10kcal_extract "radiocfg" 20480 2116
 		ath10kcal_patch_mac $(mtd_get_mac_ascii bdcfg wlanmac_a)
